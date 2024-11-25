@@ -17,4 +17,4 @@ RUN poetry config virtualenvs.create false && poetry install --no-root
 COPY . .
 
 ENTRYPOINT ["make", "run_migrations_server"]
-EXPOSE 8080
+EXPOSE 8000
