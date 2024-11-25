@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  backend:
+    image: sp1kex/spimple-api:latest
+    command: ["make", "run_migrations_server"]
+    ports:
+      - "8000:8000"
+
+  frontend:
+    image: sp1kex/svelte_front:latest
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env

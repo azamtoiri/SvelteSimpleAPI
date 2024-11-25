@@ -1,10 +1,13 @@
 run_server:
-	poetry run python manage.py runserver 0.0.0.0:8080
+	poetry run python manage.py runserver 0.0.0.0:8000
 
 migrate:
 	poetry run python manage.py migrate
 
-run_migrations_server: migrate run_server
+fixture:
+	poetry run python manage.py loaddata pages/fixtures/eng.json
+
+run_migrations_server: migrate fixture run_server
 #
 #.PHONY: help
 #
