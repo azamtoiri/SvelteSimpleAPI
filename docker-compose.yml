@@ -11,5 +11,6 @@ services:
     image: sp1kex/svelte_front:latest
     ports:
       - '3000:3000'
-    env_file:
-      - .env
+    environment:
+      - VITE_API_URL=http://backend:8000/
+      - PORT=3000
